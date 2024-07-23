@@ -1,6 +1,3 @@
-Here's the updated playbook using a variable for the username:
-YAML
-
 ---
 - hosts: all
   become: true
