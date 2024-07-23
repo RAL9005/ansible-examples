@@ -1,6 +1,14 @@
+Here's the updated playbook using a variable for the username:
+YAML
+
+---
 - hosts: all
   become: true
   gather_facts: yes
+  connection: ssh
+
+  vars:
+    remote_user: {{ remote_user }}
 
   tasks:
   - name: Update package list
