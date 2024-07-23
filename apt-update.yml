@@ -1,0 +1,18 @@
+- hosts: all
+  become: true
+  gather_facts: yes
+
+  tasks:
+  - name: Update package list
+    apt:
+      update_cache: yes
+      cache_valid_time: 86400
+
+  - name: Upgrade installed packages
+    apt:
+      upgrade: yes
+      state: present
+
+  - name: Remove unused packages and dependencies
+    apt:
+      autoremove: yes
